@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form và các điều khiển trên form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        table {
+            border: 1px solid #7a92a5;
+            background-color: #f4f7f9;
+            padding: 10px;
+            border-collapse: collapse;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+        }
+        td {
+            padding: 4px 8px;
+        }
+        .form-title {
+            text-align: center;
+            font-weight: bold;
+            color: #8b0000;
+            font-size: 18px;
+            padding-bottom: 8px;
+        }
+        .btn-container {
+            text-align: center;
+            padding-top: 6px;
+        }
+        .result-label {
+            color: blue;
+            font-weight: bold;
+            padding-top: 6px;
+            word-break: break-all;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="formDangNhap">
+        <table>
+            <tr>
+                <td colspan="2" class="form-title">Đăng nhập</td>
+            </tr>
+            <tr>
+                <td><label for="txtUser">Mã người dùng:</label></td>
+                <td>
+                    <input type="text" id="txtUser" name="txtUser">
+                </td>
+            </tr>
+            <tr>
+                <td><label for="txtPass">Mật khẩu:</label></td>
+                <td>
+                    <input type="password" id="txtPass" name="txtPass">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="btn-container">
+                    <input type="button" id="btnDongY" value="Đồng ý" onclick="xuLyDangNhap()">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div id="lblKetQua" class="result-label"></div>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function xuLyDangNhap() {
+            var maNguoiDung = document.getElementById("txtUser").value;
+            document.getElementById("lblKetQua").innerText = maNguoiDung;
+        }
+    </script>
+
+</body>
+</html>
