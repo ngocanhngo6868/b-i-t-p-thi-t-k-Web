@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Tạo form và các điều khiển</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        table {
+            background-color: #d8f3d8;
+            border: 1px solid #73b373;
+            border-collapse: collapse;
+            width: 500px;
+        }
+        td {
+            padding: 5px 10px;
+            border: 1px solid #a1d6a1;
+            font-size: 14px;
+        }
+        .form-title {
+            text-align: center;
+            font-weight: bold;
+            color: #006600;
+            font-size: 18px;
+            padding: 8px;
+            background-color: #c4ecc4;
+        }
+        input[type="text"], select {
+            width: 95%;
+            box-sizing: border-box;
+        }
+        select[multiple] {
+            height: 80px;
+        }
+        .btn-container {
+            text-align: center;
+            padding: 8px;
+        }
+        .message-label {
+            text-align: center;
+            color: red;
+            font-weight: bold;
+            padding: 6px;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="formKhuyenMai">
+        <table>
+            <tr>
+                <td colspan="2" class="form-title">
+                    Phiếu đăng ký tham gia chương trình khuyến mãi
+                </td>
+            </tr>
+            <tr>
+                <td width="35%">Họ và tên</td>
+                <td width="65%">
+                    <input type="text" id="txtHoTen" name="txtHoTen">
+                </td>
+            </tr>
+            <tr>
+                <td>Địa chỉ</td>
+                <td>
+                    <input type="text" id="txtDiaChi" name="txtDiaChi">
+                </td>
+            </tr>
+            <tr>
+                <td>Điện thoại</td>
+                <td>
+                    <input type="text" id="txtDienThoai" name="txtDienThoai">
+                </td>
+            </tr>
+            <tr>
+                <td>Phái</td>
+                <td>
+                    <input type="radio" id="radNam" name="radPhai" value="Nam">
+                    <label for="radNam">Nam</label>
+                    <input type="radio" id="radNu" name="radPhai" value="Nữ">
+                    <label for="radNu">Nữ</label>
+                </td>
+            </tr>
+            <tr>
+                <td>Nghề nghiệp</td>
+                <td>
+                    <select id="selNgheNghiep" name="selNgheNghiep">
+                        <option value="Bác sĩ">Bác sĩ</option>
+                        <option value="Kỹ sư">Kỹ sư</option>
+                        <option value="Giáo viên">Giáo viên</option>
+                        <option value="Khác">Khác</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Chọn sản phẩm tham gia</td>
+                <td>
+                    <select id="selSanPham" name="selSanPham" multiple>
+                        <option value="Kem đánh răng">Kem đánh răng</option>
+                        <option value="Bột giặt">Bột giặt</option>
+                        <option value="Dầu gội đầu">Dầu gội đầu</option>
+                        <option value="Sữa tắm">Sữa tắm</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Số người dự đoán tham gia</td>
+                <td>
+                    <input type="text" id="txtDuDoan" name="txtDuDoan">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2" class="btn-container">
+                    <input type="button" id="btnDongY" value="Đồng ý" onclick="xuLyDangKy()">
+                </td>
+            </tr>
+            <tr>
+                <td colspan="2">
+                    <div id="lblThongBao" class="message-label"></div>
+                </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        function xuLyDangKy() {
+            document.getElementById("lblThongBao").innerText = "Bạn đã đăng ký thành công!!!";
+        }
+    </script>
+
+</body>
+</html>
